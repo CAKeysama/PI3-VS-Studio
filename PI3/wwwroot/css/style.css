@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700;800&display=swap');
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F7F3EA !important;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #F7F3EA;
+}
+
+
+.banner-introducao {
+    margin: 10% 0% 5%;
+}
+
+.banner-final {
+    margin: 10% 0% 0%;
+}
+
+.div-banner {
+    background-color: #EAD3B2;
+}
+
+.txt-titulos {
+    font-weight: 800;
+}
+
+.txt-introdutivo {
+    font-weight: 300;
+}
+
+#textoIntro {
+    padding-top: 12%;
+}
+
+.titulo {
+    font-weight: 800;
+    padding-top: 10%;
+    margin-left: 10%;
+}
+
+.img-banner {
+    width: 40%;
+    margin-left: 450px;
+}
+
+.txt-conteudo {
+    font-weight: 400;
+}
+
+.imgBanner {
+    width: 200px;
+}
+
+.icon::before {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .imgBanner {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .imgBanner {
+        width: 200px;
+    }
+}
+
+.div-img-register {
+    width: 37%;
+    left: -5.2vw;
+    border-top-left-radius: 25%;
+    max-width: 280px;
+    border-top-right-radius: 25%;
+    background-color: #D9A273;
+}
+
+
+
+footer {
+    background-color: #262526;
+    min-height: 50px;
+    padding: 18px;
+    align-items: center !important;
+}
+
+.scrollprin {
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+    overflow-y: auto;
+}
+
+#imgDog {
+    border-radius: 100px 100px 0px 0px;
+}
+
+#imgCat {
+    border-radius: 0px 0px 100px 100px;
+}
+
+.image-frame {
+    width: 70%; /* largura da imagem */
+    height: 70%; /* altura da imagem */
+    background-image: url("/assets/img/PETS/pluto.jpg"); /* define a imagem de fundo da div */
+    background-size: cover; /* dimensiona a imagem de fundo para cobrir toda a div */
+    background-position: center; /* alinha a imagem de fundo no centro da div */
+    border: 2px solid black; /* adiciona uma borda de 2px à volta da div */
+}
+
+.Quad-Pai {
+    z-index: 5;
+    height: 416px;
+    left: 27%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    background-color: #D9A273;
+    transition: all 0.2s;
+}
+
+.Quad-Pai2 {
+    z-index: 5;
+    height: 308px;
+    left: 32%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    background-color: #EAD3B2;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+
+
+
+@media screen and (max-width: 1450px) {
+    .Quad-Pai {
+        left: 25%;
+    }
+}
+
+@media screen and (max-width: 1302px) {
+    .Quad-Pai {
+        left: 23%;
+    }
+}
+
+@media screen and (max-width: 1126px) {
+    .Quad-Pai {
+        left: 21%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .Quad-Pai {
+        left: 19%;
+    }
+}
+
+abbr {
+    text-decoration: none !important;
+}
+
+
+footer {
+    background-color: #262526;
+    min-height: 50px;
+    padding: 18px;
+    align-items: center !important;
+}
+
+@media screen and (max-width: 1450px) {
+    .Quad-Pai2 {
+        left: 30%;
+    }
+}
+
+@media screen and (max-width: 1302px) {
+    .Quad-Pai2 {
+        left: 28%;
+    }
+}
+
+@media screen and (max-width: 1126px) {
+    .Quad-Pai2 {
+        left: 26%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .Quad-Pai2 {
+        left: 24%;
+    }
+}
+
+.icon::before {
+    font-size: 20px;
+}
+
+footer {
+    background-color: #262526;
+    min-height: 50px;
+    padding: 18px;
+    align-items: center !important;
+}
+
+.icon::before {
+    font-size: 20px;
+}
+
+
+.a-do-footer > a {
+    color: #EAD3B2 !important;
+}
