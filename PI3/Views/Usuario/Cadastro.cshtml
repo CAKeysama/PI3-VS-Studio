@@ -25,8 +25,9 @@
                     <div class="col-sm">
                         <label>Confirmar Senha</label>
                         <input type="password" class="form-control rounded-4" name="SENHA" id="Confsenha">
-                        <div class=" text-end">
-                            <button type="submit" class="btn rounded-4 mt-3 " style="background-color: #D9A273;">
+                        <p id="mensagem"></p>
+                        <div class="text-end">
+                            <button type="submit" class="btn rounded-4 mt-3" style="background-color: #D9A273;">
                                 Cadastrar
                             </button>
                         </div>
@@ -36,3 +37,21 @@
         </div>
     </form>
 </div>
+
+
+@*<script>
+    var senhaInput = document.getElementById("senha");
+    var confSenhaInput = document.getElementById("confSenha");
+    var mensagem = document.getElementById("mensagem");
+
+    senhaInput.addEventListener("input", verificarSenha);
+    confSenhaInput.addEventListener("input", verificarSenha);
+
+    function verificarSenha() {
+        if (senhaInput.value === confSenhaInput.value) {
+            alert("As senhas coincidem!")
+        } else {
+            alert("As senhas não coincidem")
+        }
+    }
+</script>*@

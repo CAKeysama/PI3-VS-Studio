@@ -1,4 +1,17 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿var senhaInput = document.getElementById("senha");
+var confSenhaInput = document.getElementById("confSenha");
+var mensagem = document.getElementById("mensagem");
 
-// Write your JavaScript code.
+senhaInput.addEventListener("input", verificarSenha);
+confSenhaInput.addEventListener("input", verificarSenha);
+
+function verificarSenha() {
+    var senha = senhaInput.value;
+    var confSenha = confSenhaInput.value;
+
+    if (senha === confSenha) {
+        mensagem.textContent = "As senhas coincidem!";
+    } else {
+        mensagem.textContent = "As senhas não coincidem!";
+    }
+}
