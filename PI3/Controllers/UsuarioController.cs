@@ -13,8 +13,34 @@ namespace PI3.Controllers
         {
             db = contexto;
         }
+ 
 
+        public IActionResult Login()
+        {
+            return View();
+        }
 
+        [HttpPost]
+
+        public IActionResult Login(string email, string senha)
+        {
+            var usuario = db.USUARIO.FirstOrDefault(u => u.EMAIL == email && u.SENHA == senha);
+            if (usuario != null )
+            {
+                return RedirectToAction("Usuario", "Usuario");
+
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Email ou senha invalidos");
+                return View("Login");
+            }
+        }
+
+        public IActionResult Usuario()
+        {
+            return View();
+        }
         public IActionResult Cadastro()
         {
             UsuarioViewModel model = new UsuarioViewModel();
@@ -27,16 +53,6 @@ namespace PI3.Controllers
             db.USUARIO.Add(dados);
             db.SaveChanges();
             return RedirectToAction("Usuario", "Usuario");
-        }
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        public IActionResult Usuario()
-        {
-            return View();
         }
     }
 }

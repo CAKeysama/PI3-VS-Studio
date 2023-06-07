@@ -1,4 +1,4 @@
-﻿
+﻿@model PI3.Models.PetsViewModel
 
 <div class="container-fluid p-5" style="background-color: #E3CAA5;">
 
@@ -63,50 +63,50 @@
 
             <div class="vr d-none d-md-block linha-vertical" style="padding: 0;"></div>
 
-            <div class="col-0 pt-5 pt-md-0 col-md text-center">
+          
+            <form action="/Pets/SalvarDados" class="col-0 pt-5 pt-md-0 col-md text-center" method="post" enctype="multipart/form-data">
                 <h1 class="fw-bold pb-4 pb-md-5">CADASTRE UM PET</h1>
                 <div class="col-10 mx-auto">
                     <div class="mb-2 text-center text-md-start">
                         <label for="nome" class="form-label ms-md-3">Nome</label>
-                        <input type="text" id="" class="form-control rounded-5" placeholder="Qual o nome do pet?"
+                        <input name="NOME" type="text" id="" class="form-control rounded-5" placeholder="Qual o nome do pet?"
                                style="background-color: #D9A273; border: none;">
                     </div>
                     <div class="mb-2 pt-2 text-center text-md-start">
                         <label for="raca" class="form-label ms-md-3">Raça</label>
-                        <input type="text" id="" class="form-control rounded-5"
+                        <input name="RACA" type="text" id="" class="form-control rounded-5"
                                placeholder="Digite a raça do Pet aqui."
                                style="background-color: #D9A273; border: none;">
                     </div>
                     <div class="row">
                         <div class="mb-3 col-6 text-center text-md-start">
                             <label for="peso" class="form-label ms-md-3">Peso</label>
-                            <input type="text" id="" class="form-control rounded-5"
+                            <input name="PESO" type="text" id="" class="form-control rounded-5"
                                    placeholder="Digite o peso do Pet."
                                    style="background-color: #D9A273; border: none;">
                         </div>
                         <div class="col-6 text-center text-md-start">
-                            <label for="idade" class="form-label ms-md-3">Idade</label>
-                            <input type="text" id="" class="form-control rounded-5" placeholder="Qual Idade do Pet?"
+                            <label for="idade" class="form-label ms-md-3">Nascimento</label>
+                            <input name="DATANASCIMENTO" type="date" id="" class="form-control rounded-5" placeholder="Qual Idade do Pet?"
                                    style="background-color: #D9A273; border: none;">
                         </div>
                     </div>
                     <div class="mb-3 text-center text-md-start">
                         <label for="senha" class="form-label ms-md-3">Descrição</label>
-                        <textarea class="form-control rounded-4" id="exampleFormControlTextarea1" rows="5"
+                        <textarea name="DESCRICAO" class="form-control rounded-4" id="exampleFormControlTextarea1" rows="5"
                                   placeholder="Escreva algo sobre o Pet..."
                                   style="background-color: #D9A273; border: none; resize: none;"></textarea>
 
                     </div>
                     <div class="pb-4 mt-1 d-flex justify-content-center justify-content-md-end">
-                        <button type="button" id="" class="btn btn-lg rounded-5 fs-6" data-bs-toggle="modal"
+                        <button type="submit" id="" class="btn btn-lg rounded-5 fs-6" data-bs-toggle="modal"
                                 data-bs-target="" style="background-color: #D9A273; border: none;">
                             Cadastrar
                         </button>
                     </div>
                 </div>
 
-            </div>
-
+            </form>
 
 
         </div>

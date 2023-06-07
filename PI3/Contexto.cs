@@ -9,5 +9,7 @@ public class Contexto : DbContext
     { }
 
     public DbSet<Usuario> USUARIO { get; set; }
+    public DbSet<Pets> PETS { get; set; }
+
 
 }
