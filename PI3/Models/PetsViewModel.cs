@@ -1,13 +1,15 @@
-﻿namespace PI3.Models
+﻿using PI3.Entidades;
+
+namespace PI3.Models
 {
     public class PetsViewModel
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Raca { get; set;}
-        public string Peso { get; set;}
-        public DateTime DataNascimento { get; set; }
-        public string Descricao { get; set; }
+        public PetsViewModel() 
+        {
+            ListaPets = new List<Pets>();
+        }
+      public List<Pets> ListaPets { get; set; }
+      public Usuario Usuario { get; set; }
 
     }
 }

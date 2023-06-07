@@ -1,8 +1,11 @@
-﻿namespace PI3.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace PI3.Entidades
 {
     public class Usuario
     {
-        public int ID { get; set; }
+        
+        public int Id { get; set; }
         public string NOME { get; set; }
         public string EMAIL { get; set; }
         public string TELEFONE { get; set; }

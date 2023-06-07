@@ -1,7 +1,7 @@
 ﻿<link rel="stylesheet" href="~/css/outrocss.css">
 
 <div class="d-flex min-vh-100 justify-content-center align-items-center">
-    <form method="post" class=" FormLogin m-5 border border-dark-subtle rounded-5">
+    <form method="post" action="/Usuario/Login" class=" FormLogin m-5 border border-dark-subtle rounded-5">
         <div id="inputLogin" class="row d-flex align-items-center ">
             <div class="col-md d-none d-md-block">
                 <img class="img-fluid" src="/img/LOGIN/LoginCat.png">
@@ -10,9 +10,10 @@
                 <h2 class="txt-titulo">BEM-VINDO</h2>
                 <div class="d-grid gap-2">
                     <label>Nome</label>
-                    <input type="text" class="form-control rounded-4" name="EMAIL" id="nome">
+                    <input type="text" class="form-control rounded-4" name="email" id="nome">
                     <label>Senha</label>
-                    <input type="password" class="form-control rounded-4" name="SENHA" id="loginSenha">
+                    <input type="password" class="form-control rounded-4" name="senha" id="loginSenha">
+                    <input type="hidden" class="form-control rounded-4" name="ReturnUrl" value="@TempData["ReturnUrl"]">
                     <div class="text-end">
                         <button type="submit" class="btn rounded-4 mt-3 w-50 " style="background-color: #EAD3B2;">
                             Entrar

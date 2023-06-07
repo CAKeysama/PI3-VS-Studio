@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PI3.Models;
 using System.Diagnostics;
 
 namespace PI3.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -12,16 +14,17 @@ namespace PI3.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
             return View();
         }
+       
         public IActionResult Sobre()
         {
             return View();
         }
-
+        
         public IActionResult Privacy()
         {
             return View();

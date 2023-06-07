@@ -43,9 +43,26 @@
                     <li class="nav-item ms-5 me-5">
                         <a class="nav-link active text-center" href="/Home/Sobre">SOBRE</a>
                     </li>
+
+                    <li class="nav-item ms-5 me-5">
+                        <a class="nav-link active text-center" href="/Usuario/Cadastro">Cadastre-se</a>
+                    </li>
                 </ul>
             </div>
-            <a class="nav-link active" href="/Usuario/Usuario">PERFIL</a>
+
+            @if (User.IsInRole("Administrador"))
+            {
+                <a class="nav-link active" href="/Usuario/Usuario">PERFIL</a> 
+             <span>  -  </span>
+                <a class="nav-link active" href="/Usuario/Logoff">Sair do Sistema</a>
+            }
+            else
+            {
+                <a class="nav-link active" href="/Usuario/Login">Logar</a>
+            }
+           
+
+           
         </div>
     </nav>
 

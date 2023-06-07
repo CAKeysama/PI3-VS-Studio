@@ -2,10 +2,13 @@
 using PI3.Entidades;
 using PI3.Models;
 using Microsoft.EntityFrameworkCore;
-
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace PI3.Controllers
 {
+
     public class UsuarioController : Controller
     {
         private Contexto db;
@@ -15,19 +18,50 @@ namespace PI3.Controllers
         }
  
 
-        public IActionResult Login()
+        public IActionResult Login(string ReturnUrl)
         {
+
+            if (string.IsNullOrEmpty(ReturnUrl))
+            {
+                ReturnUrl = "/";
+            }
+
+            TempData["ReturnUrl"] = ReturnUrl;
             return View();
         }
 
         [HttpPost]
 
-        public IActionResult Login(string email, string senha)
+        public async Task<IActionResult> Login(string email, string senha, string ReturnUrl)
         {
             var usuario = db.USUARIO.FirstOrDefault(u => u.EMAIL == email && u.SENHA == senha);
             if (usuario != null )
             {
-                return RedirectToAction("Usuario", "Usuario");
+                List<Claim> claims = new List<Claim>();
+
+                claims.Add(new Claim(ClaimTypes.Name, usuario.NOME));
+                claims.Add(new Claim(ClaimTypes.Role, "Administrador"));
+                claims.Add(new Claim(ClaimTypes.Sid, usuario.Id.ToString()));
+
+                var claimsIdentity = new ClaimsIdentity(
+                    claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                var authProperties = new AuthenticationProperties
+                {
+                    IsPersistent = true,
+                };
+
+                await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(claimsIdentity),
+                    authProperties);
+
+                if (string.IsNullOrEmpty(ReturnUrl))
+                {
+                    ReturnUrl = "/";
+                }
+
+                return Redirect(ReturnUrl);
 
             }
             else
@@ -37,9 +71,25 @@ namespace PI3.Controllers
             }
         }
 
+        public async Task<IActionResult> LogOff()
+        {
+
+            await HttpContext.SignOutAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Login");
+        }
+
+
         public IActionResult Usuario()
         {
-            return View();
+            int UsuarioId = int.Parse(User.FindFirstValue(ClaimTypes.Sid));
+            PetsViewModel model = new PetsViewModel();
+            model.ListaPets = db.PETS.Where(a => a.UsuarioId == UsuarioId).ToList();
+            model.Usuario = db.USUARIO.Find(UsuarioId);
+
+
+            return View(model);
         }
         public IActionResult Cadastro()
         {

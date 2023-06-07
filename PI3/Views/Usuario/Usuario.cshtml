@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-md-6 col-xl-4">
-            <h1 class="fw-bold">ISADORA</h1>
+            <h1 class="fw-bold">@Model.Usuario.NOME</h1>
             <h1 class="fw-bold">AUGUSTO</h1>
             <p class="text-break">
                 Lorem ipsum dolor sit amet. Non explicabo eveniet cum Labore quia quaerat
@@ -41,17 +41,25 @@
                 <h1 class="fw-bold text-center pb-5">PETS CADASTRADOS</h1>
 
                 <div class="col">
-
-                    <div class="card mx-auto" style="width: 18rem;">
-                        <div>
-                            <img src="/img/PERFIL USUARIO/pluto.jpg" class="mx-auto d-block h-100 w-100"
-                                 alt="">
+                    @foreach (var item in Model.ListaPets)
+                    {
+                        <div class="card mx-auto" style="width: 18rem;">
+                            <div>
+                                <img src="/upload/@item.CaminhoImagem" class="mx-auto d-block h-100 w-100" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">@item.NOME</h5>
+                                <p class="card-text">
+                                    @item.DESCRICAO
+                                    <br>
+                                    Peso: @item.RACA
+                                    <br>
+                                    Raça: @item.PESO
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pluto, 5 anos</h5>
-                            <p class="card-text">Brincalhão e carinhoso</p>
-                        </div>
-                    </div>
+                    }
+                   
 
 
 
@@ -78,6 +86,14 @@
                                placeholder="Digite a raça do Pet aqui."
                                style="background-color: #D9A273; border: none;">
                     </div>
+
+                    <div class="mb-2 pt-2 text-center text-md-start">
+                        <label for="raca" class="form-label ms-md-3">Foto</label>
+                        <input name="Imagem" type="file" id="" class="form-control rounded-5"
+                               placeholder="Digite a raça do Pet aqui."
+                               style="background-color: #D9A273; border: none;">
+                    </div>
+
                     <div class="row">
                         <div class="mb-3 col-6 text-center text-md-start">
                             <label for="peso" class="form-label ms-md-3">Peso</label>
