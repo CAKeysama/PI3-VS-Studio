@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Contexto>(
-    option => option.UseSqlServer("Server=c3po;Database=PI3; Trusted_Connection=True; Encrypt=True; TrustServerCertificate=true;")
+    option => option.UseSqlServer("Server=cake;Database=PROJETO; Trusted_Connection=True; Encrypt=True; TrustServerCertificate=true;")
     );
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
