@@ -1,14 +1,20 @@
 ﻿<div class="container">
     <div class="banner-introducao ">
         <div class="row">
-            <div id="textoIntro" class="col-md-7  txt-introdutivo ">
+            <form action="/Home/Index" id="textoIntro" class="col-md-7  txt-introdutivo ">
                 <h2>Seja Bem-Vindo!</h2>
                 <p>
                     Encontre animais adoraveis a espera de um lar. Todos disponiveis para adoção, pesquise e descobre
                     qual será seu novo amor. Adote e veja como pets pode melhorar sua vida!
                 </p>
-                <input class="form-control border rounded-5 " type="search" placeholder="🔎 Pesquise Aqui!...">
-            </div>
+
+                <!--PESQUISA-->
+                <input class="form-control border rounded-5 " name="busca" type="search" placeholder="🔎 Pesquise Aqui!...">
+                <br />  
+
+                <a type="submit" class="btn text-start border rounded-4 bg-white">Pesquisar</a>
+
+            </form>
             <div class="col-md-5 d-none d-md-block">
                 <img class="img-fluid" src="/img/HOME/dog-cat.png">
             </div>
@@ -50,7 +56,7 @@
                 </p>
                 <p><i class="bi bi-check-circle"></i>&ensp;Apaixone por cada pet e descubra meneiras de ajudar. </p>
 
-                <button type="button" class="btn text-start border rounded-4 bg-white">Ver Pets</button>
+                <a href="/Pets/Pets" type="button" class="btn text-start border rounded-4 bg-white">Ver Pets</a>
             </div>
 
 

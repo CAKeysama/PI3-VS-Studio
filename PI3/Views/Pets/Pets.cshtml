@@ -20,103 +20,28 @@
 
             <div class="row my-5 d-flex">
 
-                <div class="col">
+                @foreach (var item in Model.ListaPets)
+                {
 
+                <div class="col"> 
                     <div class="card mx-auto" style="width: 18rem;">
                         <div>
-                            <img src="/img/PERFIL USUARIO/pluto.jpg" class="mx-auto d-block h-100 w-100"
-                                 alt="">
+                            <img src="/upload/@item.CaminhoImagem" class="mx-auto d-block h-100 w-100" alt="">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Pluto, 5 anos</h5>
-                            <p class="card-text">Brincalhão e carinhoso</p>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-
-                <div class="col">
-                    <div class="card mx-auto" style="width: 18rem;">
-                        <div>
-                            <img src="/img/PERFIL USUARIO/pluto.jpg" class="mx-auto d-block h-100 w-100">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pluto, 5 anos</h5>
-                            <p class="card-text">Brincalhão e carinhoso</p>
+                            <h5 class="card-title">@item.NOME</h5>
+                            <p class="card-text">
+                                @item.DESCRICAO
+                                <br>
+                                Peso: @item.PESO KG
+                                <br>
+                                Raça: @item.RACA
+                            </p>
                         </div>
                     </div>
                 </div>
 
-
-
-
-                <div class="col">
-
-                    <div class="card mx-auto" style="width: 18rem;">
-                        <div>
-                            <img src="/img/PERFIL USUARIO/pluto.jpg" class="mx-auto d-block h-100 w-100"
-                                 alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pluto, 5 anos</h5>
-                            <p class="card-text">Brincalhão e carinhoso</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="row d-flex">
-
-                <div class="col">
-                    <div class="card mx-auto" style="width: 18rem;">
-                        <div>
-                            <img src="/img/PERFIL USUARIO/pluto.jpg" class="mx-auto d-block h-100 w-100"
-                                 alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pluto, 5 anos</h5>
-                            <p class="card-text">Brincalhão e carinhoso</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <div class="card mx-auto" style="width: 18rem;">
-                        <div>
-                            <img src="/img/PERFIL USUARIO/pluto.jpg" class="mx-auto d-block h-100 w-100"
-                                 alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pluto, 5 anos</h5>
-                            <p class="card-text">Brincalhão e carinhoso</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="col">
-
-                    <div class="card mx-auto" style="width: 18rem;">
-                        <div>
-                            <img src="/img/PERFIL USUARIO/pluto.jpg" class="mx-auto d-block h-100 w-100"
-                                 alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pluto, 5 anos</h5>
-                            <p class="card-text">Brincalhão e carinhoso</p>
-                        </div>
-                    </div>
-
-                </div>
+                }
 
             </div>
 

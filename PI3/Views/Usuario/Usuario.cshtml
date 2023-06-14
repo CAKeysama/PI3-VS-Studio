@@ -14,7 +14,6 @@
 
         <div class="col-md-6 col-xl-4">
             <h1 class="fw-bold">@Model.Usuario.NOME</h1>
-            <h1 class="fw-bold">AUGUSTO</h1>
             <p class="text-break">
                 Lorem ipsum dolor sit amet. Non explicabo eveniet cum Labore quia quaerat
                 reiciendis. Non explicabo eveniet cum Labore
@@ -52,9 +51,13 @@
                                 <p class="card-text">
                                     @item.DESCRICAO
                                     <br>
-                                    Peso: @item.RACA
+                                    Peso: @item.PESO KG
                                     <br>
-                                    Raça: @item.PESO
+                                    Raça: @item.RACA
+
+                                    <br>
+                                       <a href="/Pets/Excluir/@item.Id">Excluir</a>
+                                       <a href="/Pets/Editar/@item.Id">Editar</a>
                                 </p>
                             </div>
                         </div>
@@ -98,7 +101,7 @@
                         <div class="mb-3 col-6 text-center text-md-start">
                             <label for="peso" class="form-label ms-md-3">Peso</label>
                             <input name="PESO" type="text" id="" class="form-control rounded-5"
-                                   placeholder="Digite o peso do Pet."
+                                   placeholder="Digite o peso do Pet em KG."
                                    style="background-color: #D9A273; border: none;">
                         </div>
                         <div class="col-6 text-center text-md-start">
