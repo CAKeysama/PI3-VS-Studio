@@ -3,12 +3,21 @@
     border-top-left-radius: 25% 60% !important;
 }
 
+.FormEdit {
+    width: 900px;
+    border-top-left-radius: 25% 60% !important;
+}
+
 #inputCadastro {
     margin-right: 5%;
 }
 
 .inputCadastro input {
     background-color: #D9A273;
+    border: none;
+}
+.cor-input {
+    background-color: #AF7357;
     border: none;
 }
 
@@ -25,6 +34,18 @@
         margin-right: 0px !important;
     }
 }
+
+@media only screen and (max-width: 991px) {
+    .FormEdit {
+        border-top-left-radius: 0% !important;
+        border-radius: 35px !important;
+        align-items: center;
+        padding: 10%;
+        margin: 0px;
+    }
+}
+
+
 
 .FormLogin {
     width: 880px;

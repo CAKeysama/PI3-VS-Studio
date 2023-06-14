@@ -12,11 +12,15 @@
                  src="/img/PERFIL USUARIO/image 1.png" alt="">
         </div>
 
+
+
         <div class="col-md-6 col-xl-4">
             <h1 class="fw-bold">@Model.Usuario.NOME</h1>
             <p class="text-break">
-                Lorem ipsum dolor sit amet. Non explicabo eveniet cum Labore quia quaerat
-                reiciendis. Non explicabo eveniet cum Labore
+               E-mail: @Model.Usuario.EMAIL
+            </p>
+            <p class="text-break">
+               Telefone @Model.Usuario.TELEFONE
             </p>
         </div>
 
@@ -54,15 +58,16 @@
                                     Peso: @item.PESO KG
                                     <br>
                                     Raça: @item.RACA
-
                                     <br>
-                                       <a href="/Pets/Excluir/@item.Id">Excluir</a>
-                                       <a href="/Pets/Editar/@item.Id">Editar</a>
+
+                                    <a href="/Pets/Excluir/@item.Id" class="btn border rounded-4 bg-white">Excluir</a>
+                                    <a href="/Pets/Editar/@item.Id" class="btn border rounded-4 bg-white">Editar</a>
                                 </p>
                             </div>
                         </div>
+                        <br />
                     }
-                   
+
 
 
 
@@ -74,7 +79,7 @@
 
             <div class="vr d-none d-md-block linha-vertical" style="padding: 0;"></div>
 
-          
+
             <form action="/Pets/SalvarDados" class="col-0 pt-5 pt-md-0 col-md text-center" method="post" enctype="multipart/form-data">
                 <h1 class="fw-bold pb-4 pb-md-5">CADASTRE UM PET</h1>
                 <div class="col-10 mx-auto">
@@ -86,14 +91,12 @@
                     <div class="mb-2 pt-2 text-center text-md-start">
                         <label for="raca" class="form-label ms-md-3">Raça</label>
                         <input name="RACA" type="text" id="" class="form-control rounded-5"
-                               placeholder="Digite a raça do Pet aqui."
                                style="background-color: #D9A273; border: none;">
                     </div>
 
                     <div class="mb-2 pt-2 text-center text-md-start">
                         <label for="raca" class="form-label ms-md-3">Foto</label>
                         <input name="Imagem" type="file" id="" class="form-control rounded-5"
-                               placeholder="Digite a raça do Pet aqui."
                                style="background-color: #D9A273; border: none;">
                     </div>
 
@@ -101,19 +104,17 @@
                         <div class="mb-3 col-6 text-center text-md-start">
                             <label for="peso" class="form-label ms-md-3">Peso</label>
                             <input name="PESO" type="text" id="" class="form-control rounded-5"
-                                   placeholder="Digite o peso do Pet em KG."
                                    style="background-color: #D9A273; border: none;">
                         </div>
                         <div class="col-6 text-center text-md-start">
                             <label for="idade" class="form-label ms-md-3">Nascimento</label>
-                            <input name="DATANASCIMENTO" type="date" id="" class="form-control rounded-5" placeholder="Qual Idade do Pet?"
+                            <input name="DATANASCIMENTO" type="date" id="" class="form-control rounded-5"
                                    style="background-color: #D9A273; border: none;">
                         </div>
                     </div>
                     <div class="mb-3 text-center text-md-start">
                         <label for="senha" class="form-label ms-md-3">Descrição</label>
                         <textarea name="DESCRICAO" class="form-control rounded-4" id="exampleFormControlTextarea1" rows="5"
-                                  placeholder="Escreva algo sobre o Pet..."
                                   style="background-color: #D9A273; border: none; resize: none;"></textarea>
 
                     </div>

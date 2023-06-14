@@ -23,7 +23,7 @@
     <!-- navbar -->
     <nav id="nabarzinho" class="navbar navbar-expand-sm shadow">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/Home/Index"> <img src="/img/HOME/logo.png"/> </a>
+            <a class="navbar-brand" href="/Home/Index"> <img src="/img/HOME/logo.png" /> </a>
             <button class="navbar-toggler me-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,44 +45,48 @@
                     </li>
 
                     <li class="nav-item ms-5 me-5">
-                        <a class="nav-link active text-center" href="/Usuario/Cadastro">Cadastre-se</a>
+                        <a class="nav-link active text-center" href="/Usuario/Cadastro">CADASTRE-SE</a>
                     </li>
-                </ul>
-            </div>
 
-           @* @if (User.IsInRole("Administrador"))
-            {
-                <a class="nav-link active" href="/Usuario/Usuario">PERFIL</a> 
-             <span>  -  </span>
-                <a class="nav-link active" href="/Usuario/Logoff">Sair do Sistema</a>
-            }
-            else
-            {
-                <a class="nav-link active" href="/Usuario/Login">Logar</a>
-            }*@
-           
-            <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Perfil/Sair
-                </a>
+                    <div class="dropdown text-end">
+                        <a class="btn  dropdown-toggle" style="background-color:#262526; color:#EAD3B2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PERFIL│SAIR
+                        </a>
 
-                <ul class="dropdown-menu">
-                    <li>
-                        @if (User.IsInRole("Administrador"))
-                        {
-                            <a class="nav-link active" href="/Usuario/Usuario">PERFIL</a>
-                            
-                            <a class="nav-link active" href="/Usuario/Logoff">Sair do Sistema</a>
-                        }
-                        else
-                        {
-                            <a class="nav-link active" href="/Usuario/Login">Criar conta</a>
-                        }
+
+                    <li class="dropdown-menu">
+                            @if (User.IsInRole("Administrador"))
+                            {
+                            <a class="nav-link active text-center" href="/Usuario/Usuario">PERFIL</a>
+
+                            <div class="dropdown-divider "></div>
+
+                            <a class="nav-link text-center active" href="/Usuario/Logoff">SAIR</a>
+                            }
+                            else
+                            {
+                            <a class="nav-link active  text-center " href="/Usuario/Cadastro">CRIAR CONTA</a>
+                            }
                     </li>
-                </ul>
-            </div>
 
-           
+            </div>
+            </ul>
+        </div>
+
+            @* @if (User.IsInRole("Administrador"))
+        {
+        <a class="nav-link active" href="/Usuario/Usuario">PERFIL</a>
+        <span>  -  </span>
+        <a class="nav-link active" href="/Usuario/Logoff">Sair do Sistema</a>
+        }
+        else
+        {
+        <a class="nav-link active" href="/Usuario/Login">Logar</a>
+        }*@
+
+
+
+
         </div>
     </nav>
 
@@ -90,10 +94,10 @@
 
 
 
-        <main role="main">
-            @RenderBody()
-        </main>
-    
+    <main role="main">
+        @RenderBody()
+    </main>
+
 
     <footer class="footer container-fluid text-white text-center">
 
