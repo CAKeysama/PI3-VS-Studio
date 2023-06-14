@@ -18,7 +18,8 @@ namespace PI3.Controllers
 
         public IActionResult Pets()
         {
-            return View();
+            PetsViewModel model = new PetsViewModel();
+            return View(model);
         }
 
         
