@@ -37,7 +37,7 @@
                     </li>
 
                     <li class="nav-item ms-5 me-5">
-                        <a class="nav-link active text-center" href="/Pets/Lista">PETS</a>
+                        <a class="nav-link active text-center" href="/Pets/Pets">PETS</a>
                     </li>
 
                     <li class="nav-item ms-5 me-5">
@@ -50,7 +50,7 @@
                 </ul>
             </div>
 
-            @if (User.IsInRole("Administrador"))
+           @* @if (User.IsInRole("Administrador"))
             {
                 <a class="nav-link active" href="/Usuario/Usuario">PERFIL</a> 
              <span>  -  </span>
@@ -59,8 +59,28 @@
             else
             {
                 <a class="nav-link active" href="/Usuario/Login">Logar</a>
-            }
+            }*@
            
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Perfil/Sair
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        @if (User.IsInRole("Administrador"))
+                        {
+                            <a class="nav-link active" href="/Usuario/Usuario">PERFIL</a>
+                            
+                            <a class="nav-link active" href="/Usuario/Logoff">Sair do Sistema</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link active" href="/Usuario/Login">Criar conta</a>
+                        }
+                    </li>
+                </ul>
+            </div>
 
            
         </div>
