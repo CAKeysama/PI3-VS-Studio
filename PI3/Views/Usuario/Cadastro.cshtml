@@ -4,6 +4,8 @@
 
 
 <div class="d-flex min-vh-100 justify-content-center align-items-center">
+
+
     <form action="/Usuario/SalvarDados" method="post" enctype="multipart/form-data" class=" FormCadastro m-5 border border-dark-subtle rounded-5">
         <div id="inputCadastro" class="row d-flex align-items-center ">
             <div class="col-md d-none d-md-block">
@@ -11,22 +13,30 @@
             </div>
             <div class="col-md inputCadastro">
                 <h2 class="txt-titulo">CADASTRE-SE</h2>
-                <div class="d-grid gap-2">
-                    <label>Nome</label>
-                    <input type="text" class="form-control rounded-4" name="NOME" id="nome">
-                    <label>Email</label>
-                    <input type="email" class="form-control rounded-4" name="EMAIL" id="email">
-                    <label>Telefone</label>
-                    <input type="tel" class="form-control rounded-4" name="TELEFONE" id="telefone">
+                <div class="d-grid gap-1">
+                    @if (ViewData["Message"] != null)
+                    {
+                        @ViewData["Message"]
+                    }
+                    <label asp-for="NOME">Nome</label>
+                    <input asp-for="NOME" type="text" class="form-control rounded-4" name="NOME" id="nome">
+                    <span asp-validation-for="NOME" class="text-danger"></span>
+                    <label asp-for="EMAIL">Email</label>
+                    <input asp-for="EMAIL" type="email" class="form-control rounded-4" name="EMAIL" id="email">
+                    <span asp-validation-for="EMAIL" class="text-danger"></span>
+                    <label asp-for="TELEFONE">Telefone</label>
+                    <input asp-for="TELEFONE" type="tel" class="form-control rounded-4" name="TELEFONE" id="telefone">
+                    <span asp-validation-for="TELEFONE" class="text-danger"></span>
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm">
-                        <label>Senha</label>
-                        <input type="password" class="form-control rounded-4" name="SENHA" id="senha">
+                        <label asp-for="SENHA">Senha</label>
+                        <input asp-for="SENHA" type="password" class="form-control rounded-4" name="SENHA" id="senha">
+                        <span asp-validation-for="SENHA" class="text-danger"></span>
                     </div>
                     <div class="col-sm">
                         <label>Confirmar Senha</label>
-                        <input type="password" class="form-control rounded-4" name="SENHA" id="Confsenha">
+                        <input type="password" class="form-control rounded-4" name="SENHA" id="csenha">
                         <p id="mensagem"></p>
                         <div class="text-end">
                             <button type="submit" class="btn rounded-4 mt-3" style="background-color: #D9A273;">
@@ -40,20 +50,6 @@
     </form>
 </div>
 
-
-@*<script>
-    var senhaInput = document.getElementById("senha");
-    var confSenhaInput = document.getElementById("confSenha");
-    var mensagem = document.getElementById("mensagem");
-
-    senhaInput.addEventListener("input", verificarSenha);
-    confSenhaInput.addEventListener("input", verificarSenha);
-
-    function verificarSenha() {
-        if (senhaInput.value === confSenhaInput.value) {
-            alert("As senhas coincidem!")
-        } else {
-            alert("As senhas não coincidem")
-        }
-    }
-</script>*@
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
