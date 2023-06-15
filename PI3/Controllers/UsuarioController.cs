@@ -103,11 +103,6 @@ namespace PI3.Controllers
         [HttpPost]
         public IActionResult SalvarDados(Usuario dados)
         {
-            if (!ModelState.IsValid)
-                ViewData["message"] = "Informações Faltando!";
-
-            return View("Cadastro");
-
             db.USUARIO.Add(dados);
             db.SaveChanges();
             return RedirectToAction("Usuario", "Usuario");

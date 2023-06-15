@@ -15,7 +15,7 @@ namespace PI3.Models
         public string EMAIL { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
-        [MinLength(14, ErrorMessage = "O mínimo de caracteres requerido é 14")]
+        [MinLength(11, ErrorMessage = "O mínimo de caracteres requerido é 11")]
         public string TELEFONE { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
